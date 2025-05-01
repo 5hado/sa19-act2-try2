@@ -14,9 +14,9 @@ envVars:
 fromDatabase:
 name: rails-user-render # Fill in "name" from the Render PostgresQL DB you created
 property: connectionString
-- key: RAILS_ENV
-value: production
-- key: RAILS_MASTER_KEY
-sync: false
-- key: WEB_CONCURRENCY
-value: 2 # sensible default
+  - key: RAILS_ENV
+  value: production
+  - key: RAILS_MASTER_KEY
+  sync: false
+  - key: WEB_CONCURRENCY
+  value: 2 # sensible default
