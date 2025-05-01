@@ -25,4 +25,7 @@ services:
 
       - key: WEB_CONCURRENCY
         value: "2"
+production:
+  <<: *default
+  url: <%= ENV['postgresql://rails_user_render_cpdy_user:pkZ5liQr8mCoZjjMf7BgpFTgc5SfegMC@dpg-d09gtuuuk2gs73dbr92g-a.oregon-postgres.render.com/rails_user_render_cpdy'] %>
 
