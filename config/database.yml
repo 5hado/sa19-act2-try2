@@ -22,12 +22,8 @@ test:
   port: 5432
 
 production:
-  primary:
-    adapter: postgresql
-    database: your_database_name
-    username: your_username
-    password: your_password
-    host: your_host
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
 
   cable:
     adapter: postgresql
