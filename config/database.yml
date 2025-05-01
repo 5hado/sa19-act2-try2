@@ -98,4 +98,12 @@ production:
     migrations_paths: db/cable_migrate
 
 production:
+  <<: *default
+  database: myapp_production
+  cable:
+    adapter: redis
+    url: redis://localhost:6379/1
+    channel_prefix: myapp_production
+    
+production:
     url: <%= ENV["MY_APP_DATABASE_URL"] %>
