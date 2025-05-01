@@ -1,16 +1,14 @@
 databases:
-  - name: users-demo # Fill in "name" from the Render PostgreSQL DB you
-#created
-  plan: free
+- name: users-demo # Fill in "name" from the Render PostgreSQL DB you created
+plan: free
 services:
-  - type: web
-  name: users-demo # Fill in a name for your web app
-  runtime: ruby
-  plan: free
-  region: ohio # Fill in "region" to match the Render PostgreSQL DB's
-#Region -- Options are oregon (default), ohio, virginia, frankfurt, singapore
-  buildCommand: "./bin/render-build.sh" # This runs the script file we
-#created
+- type: web
+name: users-demo # Fill in a name for your web app
+runtime: ruby
+plan: free
+region: ohio # Fill in "region" to match the Render PostgreSQL DB's
+Region -- Options are oregon (default), ohio, virginia, frankfurt, singapore
+buildCommand: "./bin/render-build.sh" # This runs the script file we created
 startCommand: "bundle exec rails server"
 envVars:
 - key: DATABASE_URL
