@@ -10,20 +10,14 @@ services:
     region: oregon
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec rails server"
-
     envVars:
-      - key: postgresql://rails_user_render_cpdy_user:pkZ5liQr8mCoZjjMf7BgpFTgc5SfegMC@dpg-d09gtuuuk2gs73dbr92g-a.oregon-postgres.render.com/rails_user_render_cpdy
+      - key: DATABASE_URL
         fromDatabase:
-          name: rails-user-render
+          name: rails-user-render  # Make sure this matches your database name
           property: connectionString
-
       - key: RAILS_ENV
         value: production
-
       - key: RAILS_MASTER_KEY
         sync: false
-
       - key: WEB_CONCURRENCY
         value: "2"
-
-
