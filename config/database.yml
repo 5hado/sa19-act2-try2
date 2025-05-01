@@ -23,12 +23,15 @@ test:
 
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  database: your_database_production
+  username: your_database_username
+  password: <%= ENV['DATABASE_PASSWORD'] %>
 
-  cable:
-    adapter: postgresql
-    database: your_database_name
-    username: your_username
-    password: your_password
-    host: your_host
+cable:
+  production:
+    <<: *default
+    database: your_cable_database
+    username: your_database_username
+    password: <%= ENV['DATABASE_PASSWORD'] %>
+
 
