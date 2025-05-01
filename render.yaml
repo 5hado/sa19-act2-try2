@@ -12,7 +12,7 @@ services:
     startCommand: "bundle exec rails server"
 
     envVars:
-      - key: DATABASE_URL
+      - key: postgresql://rails_user_render_cpdy_user:pkZ5liQr8mCoZjjMf7BgpFTgc5SfegMC@dpg-d09gtuuuk2gs73dbr92g-a.oregon-postgres.render.com/rails_user_render_cpdy
         fromDatabase:
           name: rails-user-render
           property: connectionString
