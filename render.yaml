@@ -25,3 +25,6 @@ services:
 
       - key: WEB_CONCURRENCY
         value: "2"
+production:
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
